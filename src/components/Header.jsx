@@ -20,7 +20,7 @@ export default function Header() {
   };
   return (
     <section className="bg-gradient-to-r from-slate-900 to-gray-950">
-      <header className="max-w-6xl mx-auto mb-6 flex items-center justify-between py-6 px-4">
+      <header className="max-w-6xl mx-auto  flex items-center justify-between py-6 px-4">
         <div className="font-bold">
           <Link
             className={`text-white ${

@@ -52,7 +52,7 @@ export default function AuthProvider({ children }) {
       if (!currentUser) {
         console.log("no user We have");
       }
-      console.log(currentUser);
+      //   console.log(currentUser);
       setUser(currentUser);
       setLoading(false);
     });
