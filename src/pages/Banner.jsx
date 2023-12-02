@@ -5,7 +5,7 @@ export default function Banner() {
     <div className="sm:w-full bg-gradient-to-t from-[#000000] to-[#000333] grid-cols-1 md:grid-cols-2  grid lg:grid-cols-3 items-center justify-center">
       <div className="lg:col-span-2 my-6">
         <img
-          className="rounded-lg w-full lg:w-3/4 md:w-full md:w-3/4 lg:mx-auto"
+          className="rounded-lg w-full lg:w-3/4 md:w-full  lg:mx-auto"
           src="https://i.ibb.co/K5vCHTk/HD-wallpaper-pizza-slice-food-cheese.jpg"
           alt="banner-image"
         />
