@@ -35,10 +35,10 @@ export default function AuthProvider({ children }) {
   };
 
   //   update a profile
-  const updateUserProfile = (name, photoUrl) => {
+  const updateUserProfile = async (name, photoUrl) => {
     setLoading(true);
     setLoading(false);
-    return updateProfile(auth.currentUser, {
+    return await updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photoUrl,
     });
@@ -52,7 +52,7 @@ export default function AuthProvider({ children }) {
       if (!currentUser) {
         console.log("no user We have");
       }
-      //   console.log(currentUser.photoURL);
+      console.log(currentUser);
       setUser(currentUser);
       setLoading(false);
     });
