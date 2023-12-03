@@ -10,7 +10,7 @@ export default function Procedure() {
         <div className="border-2 border-sky-900 shadow-2xl flex flex-col ">
           <div className="w-full flex-grow">
             <img
-              className="rounded-md w-full px-1 "
+              className="rounded-md w-1/2 mx-auto md:w-3/4  lg:w-full px-1 "
               src="https://i.ibb.co/r58B8Nk/homemade-pizza-school-make-homemade-pizza-10x-better-fresh-pie-with-cutter-and-toppings-1024x629.jpg"
               alt="pizza"
             />
@@ -28,7 +28,7 @@ export default function Procedure() {
         <div className="border-2 border-sky-900 shadow-2xl flex flex-col ">
           <div className="w-full flex-grow">
             <img
-              className="rounded-md  w-full px-1"
+              className="rounded-md w-1/2 mx-auto md:w-3/4  lg:w-full px-1"
               src="https://i.ibb.co/XCK3LYx/3456388.png"
               alt="pizza"
             />
@@ -43,7 +43,7 @@ export default function Procedure() {
         <div className="border-2 border-sky-900 shadow-2xl flex flex-col ">
           <div className="w-full flex-grow">
             <img
-              className="rounded-md  w-full px-1"
+              className="rounded-md w-1/2 mx-auto md:w-3/4  lg:w-full px-1"
               src="https://i.ibb.co/4JPBzCk/2680985.png"
               alt="pizza"
             />
@@ -58,7 +58,7 @@ export default function Procedure() {
         <div className="border-2 border-sky-900 shadow-2xl flex flex-col ">
           <div className="w-full flex-grow">
             <img
-              className="rounded-md  w-full px-1"
+              className="rounded-md  w-1/2 mx-auto md:w-3/4  lg:w-full px-1"
               src="https://i.ibb.co/nRcHLW8/6001245.png"
               alt="pizza"
             />

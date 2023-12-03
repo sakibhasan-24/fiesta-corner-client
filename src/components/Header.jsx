@@ -33,6 +33,24 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center justify-center text-white font-semibold space-x-4">
+          <Link
+            className={`text-white ${
+              handlePathRoute("/profile") &&
+              "font-extrabold text-purple-400 bg-red-800 px-2 py-1 rounded-lg whitespace-nowrap"
+            }`}
+            to="/add-items"
+          >
+            Add Food
+          </Link>
+          <Link
+            className={`text-white ${
+              handlePathRoute("/profile") &&
+              "font-extrabold text-purple-400 bg-red-800 px-2 py-1 rounded-lg whitespace-nowrap"
+            }`}
+            to="/my-items"
+          >
+            My items
+          </Link>
           {user?.email ? (
             <>
               <Link

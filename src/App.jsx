@@ -7,6 +7,8 @@ import Signup from "./pages/Signup";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Profile from "./pages/Profile";
+import AddCart from "./pages/AddCart";
+import MyCart from "./pages/MyCart";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -15,6 +17,8 @@ export default function App() {
       children: [
         { path: "/", element: <HomePage /> },
         { path: "/profile", element: <Profile /> },
+        { path: "/add-items", element: <AddCart /> },
+        { path: "/my-items", element: <MyCart /> },
         { path: "/login", element: <Login /> },
         { path: "/signup", element: <Signup /> },
       ],
