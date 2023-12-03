@@ -45,6 +45,7 @@ export default function AddCart() {
         >
           <option value="burger">Burger</option>
           <option value="pizza">Pizza</option>
+          <option value="pizza">Steak</option>
           <option value="sandwich">Sandwich</option>
         </select>
         <input
