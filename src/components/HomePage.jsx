@@ -3,6 +3,7 @@ import Banner from "../pages/Banner";
 import Services from "../pages/Services";
 import Procedure from "../pages/Procedure";
 import Brand from "../pages/Brand";
+import Footer from "../pages/Footer";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <Brand />
       <Services />
       <Procedure />
+      <Footer />
     </div>
   );
 }
