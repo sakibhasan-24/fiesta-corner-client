@@ -44,7 +44,7 @@ export default function Header() {
           </Link>
           <Link
             className={`text-white ${
-              handlePathRoute("/profile") &&
+              handlePathRoute("/my-items") &&
               "font-extrabold text-purple-400 bg-red-800 px-2 py-1 rounded-lg whitespace-nowrap"
             }`}
             to="/my-items"

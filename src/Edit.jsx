@@ -1,6 +1,18 @@
 import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
-export default function AddCart() {
+export default function Edit() {
+  const food = useLoaderData();
+  console.log(food);
+  const {
+    _id,
+    foodDescription,
+    foodImage,
+    foodPrice,
+    foodRating,
+    foodType,
+    foodName,
+  } = food;
   const [formData, setFormData] = useState({});
   const handleFormData = (e) => {
     e.preventDefault();
@@ -20,8 +32,8 @@ export default function AddCart() {
       foodDescription,
     };
     // console.log(foodInfo);
-    fetch("http://localhost:3000/food-items", {
-      method: "POST",
+    fetch(`http://localhost:3000/food-items/edit/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -59,6 +71,7 @@ export default function AddCart() {
           type="text"
           name=""
           id="foodName"
+          defaultValue={foodName}
           placeholder="food name"
         />
 
@@ -67,6 +80,7 @@ export default function AddCart() {
           type="text"
           name=""
           id="imageUrl"
+          defaultValue={foodImage}
           placeholder="image url"
         />
         <input
@@ -76,6 +90,7 @@ export default function AddCart() {
           id="price"
           min={60}
           max={1000}
+          defaultValue={foodPrice}
           placeholder="price"
         />
         <textarea
@@ -85,6 +100,7 @@ export default function AddCart() {
           cols="5"
           placeholder="description"
           rows="5"
+          defaultValue={foodDescription}
         ></textarea>
         <input
           className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
@@ -92,11 +108,12 @@ export default function AddCart() {
           name=""
           id="rating"
           placeholder="rating"
+          defaultValue={foodRating}
         />
         <input
           className="w-1/3 bg-blue-700 border-0  font-semibold uppercase text-white my-6 cursor-pointer  mx-auto px-4 py-2 rounded-md"
           type="submit"
-          value="add"
+          value="update"
         />
       </form>
     </section>
