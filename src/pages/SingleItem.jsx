@@ -40,9 +40,9 @@ export default function SingleItem({ food, handleDelete }) {
         >
           Details
         </Link>
-        <Link onClick={() => handleDelete(food._id)} to={"/"}>
+        <button onClick={() => handleDelete(food._id)}>
           <MdAutoDelete className="text-4xl" />
-        </Link>
+        </button>
       </div>
     </div>
   );
