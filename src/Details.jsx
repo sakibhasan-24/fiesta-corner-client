@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
-import { MdAutoDelete } from "react-icons/md";
 
 export default function Details() {
   const food = useLoaderData();
@@ -44,9 +43,6 @@ export default function Details() {
         <div className="max-w-lg mx-auto flex items-center justify-between my-6">
           <Link to={`/edit/${_id}`}>
             <FaEdit className="text-4xl" />
-          </Link>
-          <Link to="">
-            <MdAutoDelete className="text-4xl" />
           </Link>
         </div>
       </div>

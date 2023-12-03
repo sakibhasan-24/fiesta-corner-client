@@ -1,7 +1,8 @@
 import React from "react";
+import { MdAutoDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-export default function SingleItem({ food }) {
+export default function SingleItem({ food, handleDelete }) {
   const {
     _id,
     foodDescription,
@@ -38,6 +39,9 @@ export default function SingleItem({ food }) {
           to={`/details/${_id}`}
         >
           Details
+        </Link>
+        <Link onClick={() => handleDelete(food._id)} to={"/"}>
+          <MdAutoDelete className="text-4xl" />
         </Link>
       </div>
     </div>
