@@ -12,6 +12,7 @@ import MyCart from "./pages/MyCart";
 import Details from "./Details";
 import Edit from "./Edit";
 import Foods from "./pages/Foods";
+import Protected from "./routes/Protected";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -19,19 +20,41 @@ export default function App() {
       element: <Home />,
       children: [
         { path: "/", element: <HomePage /> },
-        { path: "/profile", element: <Profile /> },
-        { path: "/add-items", element: <AddCart /> },
+        {
+          path: "/profile",
+          element: (
+            <Protected>
+              <Profile />
+            </Protected>
+          ),
+        },
+        {
+          path: "/add-items",
+          element: (
+            <Protected>
+              <AddCart />
+            </Protected>
+          ),
+        },
         {
           path: "/my-items",
           loader: () => fetch(`http://localhost:3000/food-items`),
-          element: <MyCart />,
+          element: (
+            <Protected>
+              <MyCart />
+            </Protected>
+          ),
         },
         // http://localhost:3000/food-items/656c17d8a5d5b6d76a6ca078
         {
           path: "/details/:id",
           loader: ({ params }) =>
             fetch(`http://localhost:3000/food-items/${params.id}`),
-          element: <Details />,
+          element: (
+            <Protected>
+              <Details />
+            </Protected>
+          ),
         },
         {
           path: "/food/:foodType",
@@ -44,7 +67,11 @@ export default function App() {
           path: "/edit/:id",
           loader: ({ params }) =>
             fetch(`http://localhost:3000/food-items/${params.id}`),
-          element: <Edit />,
+          element: (
+            <Protected>
+              <Edit />
+            </Protected>
+          ),
         },
         { path: "/login", element: <Login /> },
         { path: "/signup", element: <Signup /> },

@@ -17,7 +17,7 @@ export default function Brand() {
   return (
     <section className="bg-orange-400  mx-auto">
       <h1 className="text-center font-bold text-4xl">Our Items </h1>
-      <div className="grid grid-cols-5 gap-2 ml-20">
+      <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-2 lg:ml-20">
         <div
           onClick={() => handleNavigate(`/food/burger`)}
           className="border-2 border-sky-500 shadow-2xl px-2 py-4 cursor-pointer"

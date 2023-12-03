@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 import { toast } from "react-toastify";
@@ -18,9 +18,14 @@ export default function Header() {
       })
       .catch((e) => toast.error("something went wrong"));
   };
+  const [dark, setDark] = useState(false);
+  const handleDark = () => {
+    setDark(!dark);
+  };
+
   return (
-    <section className="bg-gradient-to-r from-slate-900 to-gray-950">
-      <header className="max-w-6xl mx-auto  flex items-center justify-between py-6 px-4">
+    <section className="bg-gradient-to-r from-slate-900 to-gray-950 whitespace-nowrap">
+      <header className="max-w-6xl mx-auto  flex flex-col md:flex-col lg:flex-row items-center  justify-between py-6 px-0 lg:px-4">
         <div className="font-bold">
           <Link className={`text-white `} to="/">
             <img
@@ -30,7 +35,7 @@ export default function Header() {
             />
           </Link>
         </div>
-        <div className="flex items-center justify-center text-white font-semibold space-x-4">
+        <div className="flex flex-wrap sm:space-y-2 lg:flex-wrap items-center justify-center text-white font-semibold space-x-4">
           <Link
             className={`text-white ${
               handlePathRoute("/add-items") &&
@@ -40,6 +45,23 @@ export default function Header() {
           >
             Add Food
           </Link>
+
+          {/* dark */}
+          <div
+            className={`join  max-w-sm flex ${
+              dark ? "bg-blue-900 text-white" : "bg-white text-black"
+            }`}
+          >
+            <input
+              onClick={handleDark}
+              type="radio"
+              name="theme-buttons"
+              className={`btn theme-controller join-item `}
+              aria-label={`${dark ? "Dark" : "light"}`}
+              value={`${dark ? "dark" : "default"}`}
+            />
+          </div>
+          {/* dark */}
           <Link
             className={`text-white ${
               handlePathRoute("/my-items") &&

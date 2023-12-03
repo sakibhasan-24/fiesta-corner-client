@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function AddCart() {
   const [formData, setFormData] = useState({});
@@ -30,11 +31,12 @@ export default function AddCart() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast.success("new item added");
       })
       .catch((e) => console.log(e.message));
   };
   return (
-    <section className="max-w-4xl mx-auto ">
+    <section className="w-full lg:max-w-4xl mx-auto ">
       <h1 className="text-slate-600 text-center font-semibold text-4xl my-8">
         Add Your Food
       </h1>
@@ -49,14 +51,14 @@ export default function AddCart() {
           <option value="sandwich">Sandwich</option>
         </select>
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md border-0"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md border-0"
           type="text"
           id="foodType"
           defaultValue={"food"}
           readOnly
         />
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           type="text"
           name=""
           id="foodName"
@@ -64,14 +66,14 @@ export default function AddCart() {
         />
 
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           type="text"
           name=""
           id="imageUrl"
           placeholder="image url"
         />
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           type="number"
           name=""
           id="price"
@@ -80,7 +82,7 @@ export default function AddCart() {
           placeholder="price"
         />
         <textarea
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           name=""
           id="description"
           cols="5"
@@ -88,7 +90,7 @@ export default function AddCart() {
           rows="5"
         ></textarea>
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           type="text"
           name=""
           id="rating"

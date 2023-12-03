@@ -8,7 +8,7 @@ import { AuthContext } from "../context/AuthProvider";
 export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location.state);
+  // console.log(location.state);
   const { createUserOnGoogle, logIn } = useContext(AuthContext);
   // google signIn method
   const handleGoogleSignIn = () => {

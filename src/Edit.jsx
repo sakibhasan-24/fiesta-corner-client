@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Edit() {
   const food = useLoaderData();
@@ -42,6 +43,7 @@ export default function Edit() {
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
+        toast.success("save your last edit");
       })
       .catch((e) => console.log(e.message));
   };
@@ -50,7 +52,7 @@ export default function Edit() {
       <h1 className="text-slate-600 text-center font-semibold text-4xl my-8">
         Add Your Food
       </h1>
-      <form onSubmit={handleFormData} className=" flex flex-col gap-4">
+      <form onSubmit={handleFormData} className=" flex flex-col gap-4 mx-2">
         <select
           id="selectFood"
           className="w-1/2 mx-auto bg-blue-300 px-4 py-3 rounded-lg"
@@ -60,14 +62,14 @@ export default function Edit() {
           <option value="sandwich">Sandwich</option>
         </select>
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md border-0"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md border-0"
           type="text"
           id="foodType"
           defaultValue={"food"}
           readOnly
         />
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           type="text"
           name=""
           id="foodName"
@@ -76,7 +78,7 @@ export default function Edit() {
         />
 
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           type="text"
           name=""
           id="imageUrl"
@@ -84,7 +86,7 @@ export default function Edit() {
           placeholder="image url"
         />
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           type="number"
           name=""
           id="price"
@@ -94,7 +96,7 @@ export default function Edit() {
           placeholder="price"
         />
         <textarea
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           name=""
           id="description"
           cols="5"
@@ -103,7 +105,7 @@ export default function Edit() {
           defaultValue={foodDescription}
         ></textarea>
         <input
-          className="w-1/2 mx-auto px-4 py-2 bg-slate-200 rounded-md"
+          className="w-full  lg:w-1/2 lg:mx-auto px-4 py-2 bg-slate-200 rounded-md"
           type="text"
           name=""
           id="rating"
