@@ -11,6 +11,7 @@ import AddCart from "./pages/AddCart";
 import MyCart from "./pages/MyCart";
 import Details from "./Details";
 import Edit from "./Edit";
+import Foods from "./pages/Foods";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -31,6 +32,12 @@ export default function App() {
           loader: ({ params }) =>
             fetch(`http://localhost:3000/food-items/${params.id}`),
           element: <Details />,
+        },
+        {
+          path: "/food/:foodType",
+          loader: ({ params }) =>
+            fetch(`http://localhost:3000/getFood/${params.foodType}`),
+          element: <Foods />,
         },
 
         {
