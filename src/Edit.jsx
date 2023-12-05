@@ -33,7 +33,7 @@ export default function Edit() {
       foodDescription,
     };
     // console.log(foodInfo);
-    fetch(`http://localhost:3000/food-items/edit/${_id}`, {
+    fetch(`https://fiesta-server-code.onrender.com/food-items/edit/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -43,7 +43,7 @@ export default function Header() {
             }`}
             to="/add-items"
           >
-            Add Food
+            Add Foods
           </Link>
 
           {/* dark */}

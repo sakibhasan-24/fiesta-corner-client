@@ -21,7 +21,8 @@ export default function MyCart() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/food/${id}`, {
+        fetch(`https://fiesta-server-code.onrender.com/food/${id}`, {
+          mode: "cors",
           method: "DELETE",
         })
           .then((res) => res.json())

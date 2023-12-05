@@ -13,6 +13,7 @@ import Details from "./Details";
 import Edit from "./Edit";
 import Foods from "./pages/Foods";
 import Protected from "./routes/Protected";
+import Error from "./pages/Error";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -38,18 +39,21 @@ export default function App() {
         },
         {
           path: "/my-items",
-          loader: () => fetch(`http://localhost:3000/food-items`),
+          loader: () =>
+            fetch(`https://fiesta-server-code.onrender.com/food-items`),
           element: (
             <Protected>
               <MyCart />
             </Protected>
           ),
         },
-        // http://localhost:3000/food-items/656c17d8a5d5b6d76a6ca078
+
         {
           path: "/details/:id",
           loader: ({ params }) =>
-            fetch(`http://localhost:3000/food-items/${params.id}`),
+            fetch(
+              `https://fiesta-server-code.onrender.com/food-items/${params.id}`
+            ),
           element: (
             <Protected>
               <Details />
@@ -59,20 +63,25 @@ export default function App() {
         {
           path: "/food/:foodType",
           loader: ({ params }) =>
-            fetch(`http://localhost:3000/getFood/${params.foodType}`),
+            fetch(
+              `https://fiesta-server-code.onrender.com/getFood/${params.foodType}`
+            ),
           element: <Foods />,
         },
 
         {
           path: "/edit/:id",
           loader: ({ params }) =>
-            fetch(`http://localhost:3000/food-items/${params.id}`),
+            fetch(
+              `https://fiesta-server-code.onrender.com/food-items/${params.id}`
+            ),
           element: (
             <Protected>
               <Edit />
             </Protected>
           ),
         },
+        { path: "*", element: <Error /> },
         { path: "/login", element: <Login /> },
         { path: "/signup", element: <Signup /> },
       ],

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-
 export default function AddCart() {
   const [formData, setFormData] = useState({});
   const handleFormData = (e) => {
@@ -21,7 +20,8 @@ export default function AddCart() {
       foodDescription,
     };
     // console.log(foodInfo);
-    fetch("http://localhost:3000/food-items", {
+    fetch("https://fiesta-server-code.onrender.com/food-items", {
+      mode: "cors",
       method: "POST",
       headers: {
         "content-type": "application/json",

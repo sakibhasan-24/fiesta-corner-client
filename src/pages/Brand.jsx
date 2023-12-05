@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Brand() {
   const [food, setFood] = useState([]);
+
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:3000/food-items")
+    fetch("https://fiesta-server-code.onrender.com/food-items")
       .then((res) => res.json())
-      .then((data) => setFood(data));
+      .then((data) => setFood(data))
+      .catch((e) => console.log(e.message));
   }, []);
   console.log("brand", food);
 
@@ -78,3 +80,21 @@ export default function Brand() {
     </section>
   );
 }
+
+// {
+//   "version": 2,
+//   "builds": [
+//     {
+//       "src": "./index.js",
+//       "use": "@vercel/node"
+//     }
+//   ],
+//   "routes": [
+//     {
+//       "src": "/(.*)",
+//       "dest": "/",
+//       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+//       "headers": { "Access-Control-Allow-Origin": "*" }
+//     }
+//   ]
+// }

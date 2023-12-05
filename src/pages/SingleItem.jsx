@@ -14,7 +14,7 @@ export default function SingleItem({ food, handleDelete }) {
   } = food;
 
   return (
-    <div className="border-2 rounded-md shadow-xl my-6 border-sky-600 flex flex-col">
+    <div className="border-2 rounded-md shadow-xl my-6 border-sky-600 flex flex-col wi">
       <div className="w-full shadow-xl flex-grow">
         <img
           className="w-full h-[160px] mx-auto rounded-lg  px-2 py-4"
@@ -23,7 +23,7 @@ export default function SingleItem({ food, handleDelete }) {
         />
       </div>
       <div className="py-4">
-        <h1 className="text-slate-600 text-center font-semibold whitespace-nowrap">
+        <h1 className="text-slate-600 text-center text-xs font-semibold whitespace-nowrap">
           {foodName || "no food Name"}
         </h1>
         <div className="flex items-center justify-between mx-2 text-xs font-semibold">
